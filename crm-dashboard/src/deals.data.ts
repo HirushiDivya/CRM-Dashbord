@@ -7,7 +7,7 @@ export interface Deal {
   priority: 'High' | 'Medium' | 'Low';
   status: string;
   stage: 'Prospecting' | 'Qualified' | 'Proposal Sent' | 'In Negotiation' | 'Closed Won';
-  pipeline: string; // Pipeline field added
+  pipeline: string; 
 }
 
 export const INITIAL_DEALS: Deal[] = [
