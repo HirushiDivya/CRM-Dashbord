@@ -42,7 +42,7 @@ npm install -g @angular/cli
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/crm-dashboard.git](https://github.com/your-username/crm-dashboard.git)
+   git clone https://github.com/HirushiDivya/CRM-Dashbord.git
    ```
 
 2. **Navigate to the project directory:**
