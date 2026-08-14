@@ -1,0 +1,219 @@
+<div class="crm-container">
+  <!-- Top Navigation Header -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="brand-dark">ENHANZER</span> <span class="brand-blue">/ CRM</span>
+    </div>
+    <nav class="nav-links">
+      <a class="active">DASHBOARD</a>
+      <a>PIPELINE</a>
+      <a>DEALS</a>
+      <a>CONTACTS</a>
+      <a>REPORTS</a>
+    </nav>
+    <div class="session-info">
+      SESSION: R.PERERA - 14:32 UTC
+    </div>
+  </header>
+
+  <main class="dashboard-body">
+    <!-- Summary Cards -->
+    <section class="summary-section">
+      <h2>Dashboard Summary</h2>
+      <div class="cards-grid">
+        <div class="summary-card border-green">
+          <div class="card-header">
+            <div>
+              <span class="card-title">Won Deals</span>
+              <div class="card-value">28</div>
+            </div>
+            <div class="icon-circle icon-green">✓</div>
+          </div>
+          <div class="card-progress">
+            <div class="progress-bar green-bg" style="width: 25%;"></div>
+          </div>
+          <div class="card-footer">Progress <span class="text-green">25%</span> in past month</div>
+        </div>
+
+        <div class="summary-card border-red">
+          <div class="card-header">
+            <div>
+              <span class="card-title">Lost Deals</span>
+              <div class="card-value">5</div>
+            </div>
+            <div class="icon-circle icon-red">✕</div>
+          </div>
+          <div class="card-progress">
+            <div class="progress-bar red-bg" style="width: 25%;"></div>
+          </div>
+          <div class="card-footer">Progress <span class="text-red">25%</span> in past month</div>
+        </div>
+
+        <div class="summary-card border-blue">
+          <div class="card-header">
+            <div>
+              <span class="card-title">Total Deals</span>
+              <div class="card-value">33</div>
+            </div>
+            <div class="icon-square icon-blue">📁</div>
+          </div>
+          <div class="card-progress">
+            <div class="progress-bar blue-bg" style="width: 75%;"></div>
+          </div>
+          <div class="card-footer">Progress <span class="text-blue">75%</span> in past month</div>
+        </div>
+
+        <div class="summary-card border-yellow">
+          <div class="card-header">
+            <div>
+              <span class="card-title">Total Pipeline Value</span>
+              <div class="card-value currency">LKR 7,500,000</div>
+            </div>
+            <div class="icon-circle icon-yellow">$</div>
+          </div>
+          <div class="card-progress">
+            <div class="progress-bar yellow-bg" style="width: 26%;"></div>
+          </div>
+          <div class="card-footer">Progress <span class="text-yellow">26%</span> in past month</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRM Pipeline Section -->
+    <section class="pipeline-section">
+      <h2>CRM Pipeline</h2>
+      
+      <!-- Interactive Filter Bar with Add Deal Button -->
+      <div class="filter-bar">
+        <div class="search-box">
+          🔍 <input type="text" placeholder="Functional text search" [(ngModel)]="searchTerm">
+        </div>
+
+        <select class="pipeline-select" [(ngModel)]="selectedPipeline">
+          <option *ngFor="let p of pipelines" [value]="p">{{ p }}</option>
+        </select>
+
+        <button class="filter-btn" (click)="clearSearch()">Reset Filter</button>
+
+        <select class="sort-select" [(ngModel)]="selectedSort">
+          <option value="default">⇅ Sorting: Default</option>
+          <option value="val-desc">Value: High to Low</option>
+          <option value="val-asc">Value: Low to High</option>
+          <option value="title-asc">Title: A to Z</option>
+        </select>
+
+        <!-- Add New Deal Button -->
+        <button class="add-btn" (click)="openModal()">+ Add New Deal</button>
+      </div>
+
+      <!-- Drag & Drop Pipeline Columns -->
+      <div class="pipeline-columns" cdkDropListGroup>
+        <div class="column" *ngFor="let stage of stages">
+          <div class="column-header">
+            <span class="col-title">{{ stage }}</span>
+            <span class="col-count">{{ getStageCount(stage) }} <span class="sub-count">{{ getStageCount(stage) }}</span></span>
+          </div>
+          <div class="col-indicator" [ngClass]="{
+            'bar-green': stage === 'Prospecting' || stage === 'Closed Won',
+            'bar-red': stage === 'Qualified',
+            'bar-blue': stage === 'Proposal Sent',
+            'bar-darkblue': stage === 'In Negotiation'
+          }"></div>
+
+          <!-- Drop Container List -->
+          <div
+            class="cards-list"
+            cdkDropList
+            [cdkDropListData]="getFilteredDeals(stage)"
+            (cdkDropListDropped)="drop($event, stage)"
+          >
+            <!-- Individual Draggable Card -->
+            <div
+              class="deal-card"
+              *ngFor="let deal of getFilteredDeals(stage)"
+              cdkDrag
+              [ngClass]="{
+                'border-left-green': deal.priority === 'Low' || stage === 'Prospecting' || stage === 'Closed Won',
+                'border-left-red': deal.priority === 'High',
+                'border-left-yellow': deal.priority === 'Medium'
+              }"
+            >
+              <!-- Drag Handle / Card Header -->
+              <div class="card-drag-header" cdkDragHandle>
+                <h4>{{ deal.title }}</h4>
+              </div>
+
+              <p class="sub-label">Expected Closing Date</p>
+              <p class="sub-label date-val">{{ deal.closingDate }}</p>
+              <p class="sub-label">Deal Value</p>
+              <p class="deal-value">LKR {{ deal.value | number }}</p>
+              
+              <div class="assignee">
+                <span class="avatar">👤</span> {{ deal.assignedTo }}
+              </div>
+              
+              <div class="deal-status" [ngClass]="{
+                'text-red': deal.priority === 'High',
+                'text-yellow': deal.priority === 'Medium',
+                'text-green': deal.priority === 'Low'
+              }">
+                {{ deal.priority }}
+              </div>
+              <div class="deal-substatus">{{ deal.status }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Form Popup for Adding New Deal -->
+  <div class="modal-backdrop" *ngIf="isModalOpen" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h3>Add New CRM Deal</h3>
+      
+      <form (ngSubmit)="addDeal()">
+        <div class="form-group">
+          <label>Deal Title</label>
+          <input type="text" [(ngModel)]="newDeal.title" name="title" required placeholder="e.g. Web App Redesign" />
+        </div>
+
+        <div class="form-group">
+          <label>Deal Value (LKR)</label>
+          <input type="number" [(ngModel)]="newDeal.value" name="value" required placeholder="e.g. 250000" />
+        </div>
+
+        <div class="form-group">
+          <label>Expected Closing Date</label>
+          <input type="date" [(ngModel)]="newDeal.closingDate" name="closingDate" />
+        </div>
+
+        <div class="form-group">
+          <label>Assigned To</label>
+          <input type="text" [(ngModel)]="newDeal.assignedTo" name="assignedTo" placeholder="e.g. J. Perera" />
+        </div>
+
+        <div class="form-group">
+          <label>Priority</label>
+          <select [(ngModel)]="newDeal.priority" name="priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Stage</label>
+          <select [(ngModel)]="newDeal.stage" name="stage">
+            <option *ngFor="let stage of stages" [value]="stage">{{ stage }}</option>
+          </select>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="cancel-btn" (click)="closeModal()">Cancel</button>
+          <button type="submit" class="save-btn">Save Deal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
