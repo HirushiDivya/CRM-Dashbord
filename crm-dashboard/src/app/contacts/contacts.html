@@ -1,0 +1,42 @@
+<div class="p-6 bg-gray-50 min-h-screen">
+  <!-- Header & Search Bar -->
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-xl font-bold text-gray-800">Contacts</h1>
+    <input type="text" placeholder="Search..." class="px-3 py-1.5 border rounded-md text-sm w-56 bg-white shadow-sm outline-none" />
+  </div>
+
+  <!-- Contacts Table -->
+  <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-gray-50 text-gray-500 text-xs uppercase border-b border-gray-100">
+          <th class="p-4 w-10 text-center"><input type="checkbox" /></th>
+          <th class="p-4 font-semibold">Name</th>
+          <th class="p-4 font-semibold">Company</th>
+          <th class="p-4 font-semibold">Email</th>
+          <th class="p-4 font-semibold">Phone</th>
+          <th class="p-4 font-semibold">Deals Associated</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100 text-sm">
+        <tr *ngFor="let c of contacts" class="hover:bg-gray-50/50 transition-colors">
+          <td class="p-4 text-center"><input type="checkbox" /></td>
+          <td class="p-4 font-medium text-gray-800 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold shadow-sm">
+              {{ c.name.charAt(0) }}
+            </div>
+            <span>{{ c.name }}</span>
+          </td>
+          <td class="p-4 text-gray-600">{{ c.company }}</td>
+          <td class="p-4 text-gray-600 text-xs">{{ c.email }}</td>
+          <td class="p-4 text-gray-600 text-xs">{{ c.phone }}</td>
+          <td class="p-4">
+            <span class="px-2.5 py-1 text-xs rounded-md font-medium bg-green-50 text-green-700">
+              {{ c.dealsCount || '3' }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

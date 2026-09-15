@@ -1,0 +1,213 @@
+<div class="p-6 bg-gray-50 min-h-screen space-y-6">
+  <!-- Top Filter Bar -->
+  <div class="bg-white p-4 rounded-lg shadow-sm flex flex-wrap gap-4 items-center justify-between">
+    <div class="flex items-center gap-4 flex-wrap">
+      <div class="flex flex-col">
+        <span class="text-[11px] text-gray-400 mb-1">Filters</span>
+        <select class="px-3 py-1.5 border rounded-md text-sm bg-white text-gray-700 min-w-[140px] outline-none">
+          <option>All Pipelines</option>
+        </select>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-[11px] text-gray-400 mb-1">Lead Summary</span>
+        <select class="px-3 py-1.5 border rounded-md text-sm bg-white text-gray-700 min-w-[140px] outline-none">
+          <option>All High</option>
+        </select>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-[11px] text-gray-400 mb-1">Pillars</span>
+        <select class="px-3 py-1.5 border rounded-md text-sm bg-white text-gray-700 min-w-[140px] outline-none">
+          <option>All Pipeline</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-3">
+      <span class="text-xs text-gray-500">Show Metric for:</span>
+      <div class="flex bg-gray-100 p-1 rounded-md">
+        <button class="px-3 py-1 bg-white text-xs font-medium rounded shadow-sm text-gray-800">Count</button>
+        <button class="px-3 py-1 text-xs font-medium text-gray-500">Sum</button>
+      </div>
+      <button class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md shadow-sm hover:bg-blue-700">+ Add New Deal</button>
+    </div>
+  </div>
+
+  <!-- Top Row: Bar Chart & Pie Chart & Legend -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <!-- Bar Chart Box (Col span 7) -->
+    <div class="bg-white p-5 rounded-lg shadow-sm lg:col-span-7 flex flex-col justify-between">
+      <div class="flex justify-between items-center mb-2">
+        <h3 class="text-sm font-bold text-gray-800">Monthly Won Deals</h3>
+        <span class="text-xs text-gray-400">⋮</span>
+      </div>
+      
+      <!-- Legend tag inside chart -->
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-3 h-3 bg-blue-600 rounded-sm inline-block"></span>
+        <span class="text-xs text-gray-600">Monthly Won Deals</span>
+      </div>
+
+      <!-- Bar Chart Simulation -->
+      <div class="h-48 flex items-end justify-between gap-3 pt-6 px-2 border-b border-gray-100">
+        <div class="w-full bg-blue-500 rounded-t" style="height: 50%;"></div>
+        <div class="w-full bg-blue-500 rounded-t" style="height: 42%;"></div>
+        <div class="w-full bg-blue-600 rounded-t" style="height: 75%;"></div>
+        <div class="w-full bg-blue-500 rounded-t" style="height: 50%;"></div>
+        <div class="w-full bg-blue-600 rounded-t" style="height: 70%;"></div>
+        <div class="w-full bg-blue-500 rounded-t" style="height: 28%;"></div>
+        <div class="w-full bg-blue-500 rounded-t" style="height: 33%;"></div>
+        <div class="w-full bg-blue-600 rounded-t" style="height: 70%;"></div>
+        <div class="w-full bg-blue-500 rounded-t" style="height: 40%;"></div>
+      </div>
+      <div class="flex justify-between text-[11px] text-gray-400 mt-2 px-1 font-medium">
+        <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sept</span><span>Oct</span>
+      </div>
+    </div>
+
+    <!-- Pie Chart Box (Col span 3) -->
+    <div class="bg-white p-5 rounded-lg shadow-sm lg:col-span-3 flex flex-col justify-between">
+      <div class="flex justify-between items-center mb-2">
+        <h3 class="text-sm font-bold text-gray-800">Lead Sources</h3>
+        <span class="text-xs text-gray-400">⋮</span>
+      </div>
+      <div class="flex justify-center items-center my-auto py-2">
+        <!-- CSS conic-gradient to simulate exact multi-color pie chart -->
+        <div class="w-36 h-36 rounded-full shadow-inner relative" style="background: conic-gradient(#2563eb 0deg 130deg, #f87171 130deg 230deg, #a855f7 230deg 280deg, #22c55e 280deg 310deg, #eab308 310deg 360deg);">
+        </div>
+      </div>
+      <div class="text-[11px] text-gray-500 text-center font-medium">Lead Sources Distribution</div>
+    </div>
+
+    <!-- Lead Sources Legend Box (Col span 2) -->
+    <div class="bg-white p-4 rounded-lg shadow-sm lg:col-span-2 flex flex-col justify-between">
+      <div class="flex justify-between items-center mb-2">
+        <h3 class="text-xs font-bold text-gray-800">Lead Sources</h3>
+        <span class="text-xs text-gray-400">⋮</span>
+      </div>
+      <div class="space-y-2 text-[11px] text-gray-600 overflow-y-auto max-h-[160px] pr-1">
+        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block"></span><span class="truncate">Courses</span></div>
+        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-red-400 inline-block"></span><span class="truncate">Facebook</span></div>
+        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-cyan-500 inline-block"></span><span class="truncate">Lead</span></div>
+        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-yellow-500 inline-block"></span><span class="truncate">Exhi</span></div>
+        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span><span class="truncate">Negotiating</span></div>
+        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-purple-500 inline-block"></span><span class="truncate">Medium</span></div>
+        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-teal-400 inline-block"></span><span class="truncate">Platform</span></div>
+        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-pink-500 inline-block"></span><span class="truncate">Negotiation</span></div>
+        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-orange-400 inline-block"></span><span class="truncate">New</span></div>
+        <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-amber-600 inline-block"></span><span class="truncate">Completed</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Row: Summary Card & Area Trend Graph -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <!-- Summary Left Card (Col span 3) -->
+    <div class="bg-white p-5 rounded-lg shadow-sm lg:col-span-3 flex flex-col justify-between">
+      <div class="flex justify-between items-center">
+        <h3 class="text-sm font-bold text-gray-800">Total Pipeline Value</h3>
+        <span class="text-xs text-gray-400">⋮</span>
+      </div>
+      
+      <div class="my-4 space-y-3">
+        <div>
+          <div class="flex justify-between text-xs text-gray-500 mb-1">
+            <span>Won</span>
+            <span class="font-bold text-gray-800">135,900</span>
+          </div>
+          <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+            <div class="bg-emerald-500 h-full w-[65%]"></div>
+          </div>
+        </div>
+
+        <div class="flex justify-between text-xs text-gray-500 pt-1">
+          <span>Bitten</span>
+          <span class="font-medium text-gray-700">65 sum</span>
+        </div>
+
+        <div>
+          <div class="flex justify-between text-xs text-gray-500 mb-1">
+            <span>Summary</span>
+            <span class="font-bold text-gray-800">40.3%</span>
+          </div>
+          <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+            <div class="bg-red-500 h-full w-[40%]"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-3 border-t border-gray-100">
+        <div class="text-[11px] text-gray-400">Total Total Won</div>
+        <div class="text-lg font-bold text-gray-900">748,000</div>
+      </div>
+    </div>
+
+    <!-- Area Trend Graph Box (Col span 9) -->
+    <div class="bg-white p-5 rounded-lg shadow-sm lg:col-span-9 flex flex-col justify-between">
+      <div class="flex justify-between items-center mb-2">
+        <h3 class="text-sm font-bold text-gray-800">Total Pipeline Value</h3>
+        <span class="text-xs text-gray-400">⋮</span>
+      </div>
+
+      <!-- Graph Legend -->
+      <div class="flex items-center gap-6 mb-2">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-2 bg-blue-400 rounded-sm inline-block border border-blue-500"></span>
+          <span class="text-xs text-gray-600">Total Pipeline Value</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-2 bg-orange-400 rounded-sm inline-block"></span>
+          <span class="text-xs text-gray-600">Total Pipeline Value</span>
+        </div>
+      </div>
+
+      <!-- Line/Area Chart Simulation with grid lines -->
+      <div class="relative h-44 w-full border-b border-l border-gray-200 mt-2">
+        <!-- Horizontal grid lines -->
+        <div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+          <div class="border-b border-gray-100 w-full h-0"></div>
+          <div class="border-b border-gray-100 w-full h-0"></div>
+          <div class="border-b border-gray-100 w-full h-0"></div>
+          <div class="border-b border-gray-100 w-full h-0"></div>
+        </div>
+
+        <!-- SVG Line curve matching image curve -->
+        <svg class="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 800 150">
+          <defs>
+            <linearGradient id="blueGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.0"/>
+            </linearGradient>
+          </defs>
+          <!-- Area Fill -->
+          <path d="M 0 140 Q 150 130, 300 110 T 500 80 T 700 40 T 800 20 L 800 150 L 0 150 Z" fill="url(#blueGradient)" />
+          <!-- Line Stroke -->
+          <path d="M 0 140 Q 150 130, 300 110 T 500 80 T 700 40 T 800 20" fill="none" stroke="#2563eb" stroke-width="2"/>
+          <!-- Points -->
+          <circle cx="0" cy="140" r="3.5" fill="#2563eb" />
+          <circle cx="160" cy="125" r="3.5" fill="#2563eb" />
+          <circle cx="320" cy="105" r="3.5" fill="#2563eb" />
+          <circle cx="480" cy="85" r="3.5" fill="#2563eb" />
+          <circle cx="640" cy="65" r="3.5" fill="#2563eb" />
+          <circle cx="800" cy="20" r="3.5" fill="#2563eb" />
+        </svg>
+      </div>
+
+      <!-- X-Axis Labels -->
+      <div class="flex justify-between text-[10px] text-gray-400 mt-2 px-1">
+        <span>Jan 2023</span>
+        <span>Feb 2023</span>
+        <span>Mar 2023</span>
+        <span>Apr 2023</span>
+        <span>May 2023</span>
+        <span>Jun 2023</span>
+        <span>Jul 2023</span>
+        <span>Aug 2023</span>
+        <span>Sep 2023</span>
+        <span>Oct 2023</span>
+        <span>Nov 2023</span>
+        <span>Dec 2023</span>
+        <span>Jan 2024</span>
+      </div>
+    </div>
+  </div>
+</div>
