@@ -4,7 +4,7 @@ An interactive, modern Customer Relationship Management (CRM) Pipeline and Deals
 
 ---
 
-<img width="1883" height="953" alt="image" src="https://github.com/user-attachments/assets/037133f4-8f78-4899-8242-c87dea121b45" />
+<img width="1867" height="944" alt="image" src="https://github.com/user-attachments/assets/1d2e0df7-3a23-4df4-9ba4-3cb3da944f76" />
 <img width="1882" height="950" alt="image" src="https://github.com/user-attachments/assets/c192c9c7-387e-4167-aa09-2ae30d8c2b9f" />
 <img width="1872" height="952" alt="image" src="https://github.com/user-attachments/assets/7f5eb363-37d4-45ba-80a2-12902276023e" />
 <img width="1875" height="953" alt="image" src="https://github.com/user-attachments/assets/8c8695ac-005d-48fa-8893-768c363a5265" />
