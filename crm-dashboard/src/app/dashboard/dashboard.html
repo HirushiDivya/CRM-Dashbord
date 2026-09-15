@@ -1,63 +1,344 @@
-<main class="dashboard-body">
-  <!-- Summary Cards පමණක් මෙහි තබන්න -->
-  <section class="summary-section">
-    <h2>Dashboard Summary</h2>
-    <div class="cards-grid">
-      <div class="summary-card border-green">
-        <div class="card-header">
+<div class="p-6 bg-gray-50 min-h-screen space-y-6">
+  
+  <!-- Dashboard Summary Cards Row -->
+  <div>
+    <h2 class="text-sm font-bold text-gray-800 mb-3">Dashboard Summary</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      
+      <!-- Card 1: Won Deals -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border-t-4 border-emerald-500 relative">
+        <div class="flex justify-between items-start">
           <div>
-            <span class="card-title">Won Deals</span>
-            <div class="card-value">28</div>
+            <span class="text-xs text-gray-500 font-medium">Won Deals</span>
+            <div class="text-2xl font-bold text-gray-900 mt-1">28</div>
           </div>
-          <div class="icon-circle icon-green">✓</div>
+          <div class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs font-bold">✓</div>
         </div>
-        <div class="card-progress">
-          <div class="progress-bar green-bg" style="width: 25%;"></div>
+        <div class="mt-4">
+          <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-emerald-500 h-full w-[25%]"></div>
+          </div>
+          <span class="text-xs text-gray-400 mt-1 block" style="font-size: 10px;">Progress 25% in past month</span>
         </div>
-        <div class="card-footer">Progress <span class="text-green">25%</span> in past month</div>
       </div>
 
-      <div class="summary-card border-red">
-        <div class="card-header">
+      <!-- Card 2: Lost Deals -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border-t-4 border-red-500 relative">
+        <div class="flex justify-between items-start">
           <div>
-            <span class="card-title">Lost Deals</span>
-            <div class="card-value">5</div>
+            <span class="text-xs text-gray-500 font-medium">Lost Deals</span>
+            <div class="text-2xl font-bold text-gray-900 mt-1">5</div>
           </div>
-          <div class="icon-circle icon-red">✕</div>
+          <div class="w-7 h-7 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs font-bold">✕</div>
         </div>
-        <div class="card-progress">
-          <div class="progress-bar red-bg" style="width: 25%;"></div>
+        <div class="mt-4">
+          <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-red-500 h-full w-[25%]"></div>
+          </div>
+          <span class="text-xs text-gray-400 mt-1 block" style="font-size: 10px;">Progress 25% in past month</span>
         </div>
-        <div class="card-footer">Progress <span class="text-red">25%</span> in past month</div>
       </div>
 
-      <div class="summary-card border-blue">
-        <div class="card-header">
+      <!-- Card 3: Total Deals -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border-t-4 border-slate-700 relative">
+        <div class="flex justify-between items-start">
           <div>
-            <span class="card-title">Total Deals</span>
-            <div class="card-value">33</div>
+            <span class="text-xs text-gray-500 font-medium">Total Deals</span>
+            <div class="text-2xl font-bold text-gray-900 mt-1">33</div>
           </div>
-          <div class="icon-square icon-blue">📁</div>
+          <div class="w-7 h-7 bg-slate-100 text-slate-700 rounded-full flex items-center justify-center text-xs font-bold">📁</div>
         </div>
-        <div class="card-progress">
-          <div class="progress-bar blue-bg" style="width: 75%;"></div>
+        <div class="mt-4">
+          <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-slate-700 h-full w-[75%]"></div>
+          </div>
+          <span class="text-xs text-gray-400 mt-1 block" style="font-size: 10px;">Progress 75% in past month</span>
         </div>
-        <div class="card-footer">Progress <span class="text-blue">75%</span> in past month</div>
       </div>
 
-      <div class="summary-card border-yellow">
-        <div class="card-header">
+      <!-- Card 4: Total Pipeline Value -->
+      <div class="bg-white p-4 rounded-lg shadow-sm border-t-4 border-amber-400 relative">
+        <div class="flex justify-between items-start">
           <div>
-            <span class="card-title">Total Pipeline Value</span>
-            <div class="card-value currency">LKR 7,500,000</div>
+            <span class="text-xs text-gray-500 font-medium">Total Pipeline Value</span>
+            <div class="text-xl font-bold text-gray-900 mt-1">LKR 7,500,000</div>
           </div>
-          <div class="icon-circle icon-yellow">$</div>
+          <div class="w-7 h-7 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-xs font-bold">$</div>
         </div>
-        <div class="card-progress">
-          <div class="progress-bar yellow-bg" style="width: 26%;"></div>
+        <div class="mt-4">
+          <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-amber-400 h-full w-[26%]"></div>
+          </div>
+          <span class="text-xs text-gray-400 mt-1 block" style="font-size: 10px;">Progress 26% in past month</span>
         </div>
-        <div class="card-footer">Progress <span class="text-yellow">26%</span> in past month</div>
       </div>
+
     </div>
-  </section>
-</main>
+  </div>
+
+  <!-- CRM Pipeline Section -->
+  <div>
+    <h2 class="text-sm font-bold text-gray-800 mb-3">CRM Pipeline</h2>
+    
+    <!-- Filter Bar -->
+    <div class="bg-white p-3 rounded-lg shadow-sm flex flex-wrap gap-3 items-center justify-between mb-4">
+      <div class="flex items-center gap-3 flex-wrap">
+        <div class="relative">
+          <input type="text" placeholder="Functional text search" class="px-3 py-1.5 pl-8 border rounded-md text-xs bg-white text-gray-700 w-52 outline-none">
+          <span class="absolute left-2.5 top-2 text-gray-400 text-xs">🔍</span>
+        </div>
+        <select class="px-3 py-1.5 border rounded-md text-xs bg-white text-gray-700 outline-none">
+          <option>All Pipelines</option>
+        </select>
+        <button class="px-3 py-1.5 bg-slate-800 text-white text-xs rounded-md font-medium hover:bg-slate-700">Reset Filter</button>
+        <div class="flex items-center gap-1 text-xs text-gray-600 pl-2">
+          <span>⇅ Sorting: Default</span>
+        </div>
+      </div>
+
+      <button class="px-4 py-1.5 bg-blue-600 text-white text-xs font-medium rounded-md shadow-sm hover:bg-blue-700">+ Add New Deal</button>
+    </div>
+
+    <!-- Kanban Board Columns (5 Columns) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 items-start overflow-x-auto pb-4">
+      
+      <!-- Column 1: Prospecting -->
+      <div class="rounded-lg p-3 space-y-3" style="background-color: rgba(241, 245, 249, 0.8);">
+        <div class="flex justify-between items-center border-b border-emerald-500 pb-2">
+          <span class="text-xs font-bold text-gray-800">Prospecting</span>
+          <span class="text-xs font-bold text-gray-600 bg-white px-1.5 py-0.5 rounded shadow-2xs">5</span>
+        </div>
+
+        <!-- Deal Card 1 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-emerald-500 text-xs">
+          <div class="font-bold text-gray-800">ww</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-08-11</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 9,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> numal
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-emerald-600" style="font-size: 10px;">Low</span>
+            <span class="text-gray-400" style="font-size: 9px;">Initial Contact</span>
+          </div>
+        </div>
+
+        <!-- Deal Card 2 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-red-500 text-xs">
+          <div class="font-bold text-gray-800">Digital Upgrade</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-08-22</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 125,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> J. Perera
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-red-500" style="font-size: 10px;">High</span>
+            <span class="text-gray-400" style="font-size: 9px;">On Track</span>
+          </div>
+        </div>
+
+        <!-- Deal Card 3 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-amber-400 text-xs">
+          <div class="font-bold text-gray-800">E-Commerce Portal</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-08-30</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 450,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> N. Fernando
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-amber-500" style="font-size: 10px;">Medium</span>
+            <span class="text-gray-400" style="font-size: 9px;">On Track</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2: Qualified -->
+      <div class="rounded-lg p-3 space-y-3" style="background-color: rgba(241, 245, 249, 0.8);">
+        <div class="flex justify-between items-center border-b border-red-500 pb-2">
+          <span class="text-xs font-bold text-gray-800">Qualified</span>
+          <span class="text-xs font-bold text-gray-600 bg-white px-1.5 py-0.5 rounded shadow-2xs">3</span>
+        </div>
+
+        <!-- Deal Card 1 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-red-500 text-xs">
+          <div class="font-bold text-gray-800">Cloud Migration Consulting</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-08-25</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 310,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> A. Silva
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-amber-500" style="font-size: 10px;">Medium</span>
+            <span class="text-gray-400" style="font-size: 9px;">On Track</span>
+          </div>
+        </div>
+
+        <!-- Deal Card 2 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-red-500 text-xs">
+          <div class="font-bold text-gray-800">Cyber Security Audit</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-09-01</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 620,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> J. Perera
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-red-500" style="font-size: 10px;">High</span>
+            <span class="text-gray-400" style="font-size: 9px;">In Review</span>
+          </div>
+        </div>
+
+        <!-- Deal Card 3 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-amber-400 text-xs">
+          <div class="font-bold text-gray-800">Infrastructure Expansion</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-09-15</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 850,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> N. Fernando
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-amber-500" style="font-size: 10px;">Medium</span>
+            <span class="text-gray-400" style="font-size: 9px;">On Track</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3: Proposal Sent -->
+      <div class="rounded-lg p-3 space-y-3" style="background-color: rgba(241, 245, 249, 0.8);">
+        <div class="flex justify-between items-center border-b border-slate-700 pb-2">
+          <span class="text-xs font-bold text-gray-800">Proposal Sent</span>
+          <span class="text-xs font-bold text-gray-600 bg-white px-1.5 py-0.5 rounded shadow-2xs">3</span>
+        </div>
+
+        <!-- Deal Card 1 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-red-500 text-xs">
+          <div class="font-bold text-gray-800">Manufacturing Proposal</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-09-02</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 500,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> N. Fernando
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-red-500" style="font-size: 10px;">High</span>
+            <span class="text-gray-400" style="font-size: 9px;">Awaiting Reply</span>
+          </div>
+        </div>
+
+        <!-- Deal Card 2 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-red-500 text-xs">
+          <div class="font-bold text-gray-800">Enterprise ERP System</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-09-18</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 1,200,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> A. Silva
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-red-500" style="font-size: 10px;">High</span>
+            <span class="text-gray-400" style="font-size: 9px;">Awaiting Reply</span>
+          </div>
+        </div>
+
+        <!-- Deal Card 3 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-amber-400 text-xs">
+          <div class="font-bold text-gray-800">Data Analytics Suite</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-09-22</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 340,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> J. Perera
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-amber-500" style="font-size: 10px;">Medium</span>
+            <span class="text-gray-400" style="font-size: 9px;">Under Review</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 4: In Negotiation -->
+      <div class="rounded-lg p-3 space-y-3" style="background-color: rgba(241, 245, 249, 0.8);">
+        <div class="flex justify-between items-center border-b border-slate-700 pb-2">
+          <span class="text-xs font-bold text-gray-800">In Negotiation</span>
+          <span class="text-xs font-bold text-gray-600 bg-white px-1.5 py-0.5 rounded shadow-2xs">3</span>
+        </div>
+
+        <!-- Deal Card 1 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-red-500 text-xs">
+          <div class="font-bold text-gray-800">Software Upgrade</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-09-09</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 150,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> A. Silva
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-red-500" style="font-size: 10px;">High</span>
+            <span class="text-gray-400" style="font-size: 9px;">Negotiating</span>
+          </div>
+        </div>
+
+        <!-- Deal Card 2 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-amber-400 text-xs">
+          <div class="font-bold text-gray-800">Annual AMC Contract</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-09-25</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 220,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> J. Perera
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-amber-500" style="font-size: 10px;">Medium</span>
+            <span class="text-gray-400" style="font-size: 9px;">Final Terms</span>
+          </div>
+        </div>
+
+        <!-- Deal Card 3 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-red-500 text-xs">
+          <div class="font-bold text-gray-800">AI Chatbot Integration</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-09-28</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 550,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> N. Fernando
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-red-500" style="font-size: 10px;">High</span>
+            <span class="text-gray-400" style="font-size: 9px;">Legal Review</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 5: Closed Won -->
+      <div class="rounded-lg p-3 space-y-3" style="background-color: rgba(241, 245, 249, 0.8);">
+        <div class="flex justify-between items-center border-b border-emerald-500 pb-2">
+          <span class="text-xs font-bold text-gray-800">Closed Won</span>
+          <span class="text-xs font-bold text-gray-600 bg-white px-1.5 py-0.5 rounded shadow-2xs">2</span>
+        </div>
+
+        <!-- Deal Card 1 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-emerald-500 text-xs">
+          <div class="font-bold text-gray-800">Consulting Project</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-09-12</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 150,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> N. Fernando
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-emerald-600" style="font-size: 10px;">Low</span>
+            <span class="text-gray-400" style="font-size: 9px;">On Track</span>
+          </div>
+        </div>
+
+        <!-- Deal Card 2 -->
+        <div class="bg-white p-3 rounded shadow-2xs space-y-1.5 border-l-2 border-emerald-500 text-xs">
+          <div class="font-bold text-gray-800">Custom CRM Development</div>
+          <div class="text-gray-400" style="font-size: 10px;">Expected Closing Date<br><span class="text-gray-600 font-medium">2026-09-10</span></div>
+          <div class="text-gray-400" style="font-size: 10px;">Deal Value<br><span class="font-bold text-gray-900">LKR 400,000</span></div>
+          <div class="flex items-center gap-1 text-gray-700 pt-1" style="font-size: 11px;">
+            <span>👤</span> A. Silva
+          </div>
+          <div class="pt-1 flex items-center justify-between">
+            <span class="font-semibold text-emerald-600" style="font-size: 10px;">Low</span>
+            <span class="text-gray-400" style="font-size: 9px;">Completed</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

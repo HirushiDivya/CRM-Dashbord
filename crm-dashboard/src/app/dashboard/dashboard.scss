@@ -1,50 +1,112 @@
-.dashboard-body {
-  padding: 24px;
+.p-6 { padding: 24px; }
+.bg-gray-50 { background-color: #f8fafc; }
+.min-h-screen { min-height: 100vh; }
+.space-y-6 > * + * { margin-top: 24px; }
+.space-y-3 > * + * { margin-top: 12px; }
+.space-y-1\.5 > * + * { margin-top: 6px; }
+
+.bg-white { background-color: #ffffff; }
+.p-4 { padding: 16px; }
+.p-3 { padding: 12px; }
+.rounded-lg { border-radius: 8px; }
+.rounded { border-radius: 4px; }
+.shadow-sm { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); }
+.shadow-2xs { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04); }
+
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-.summary-section {
-  h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    color: #333;
-  }
+@media (min-width: 768px) {
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+@media (min-width: 1024px) {
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
 
-.summary-card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  border-left: 4px solid #ccc;
+.gap-4 { gap: 16px; }
+.gap-3 { gap: 12px; }
+.gap-1 { gap: 4px; }
 
-  &.border-green { border-left-color: #10b981; }
-  &.border-red { border-left-color: #ef4444; }
-  &.border-blue { border-left-color: #3b82f6; }
-  &.border-yellow { border-left-color: #f59e0b; }
-}
+.text-xs { font-size: 12px; }
+.text-2xl { font-size: 24px; line-height: 32px; }
+.text-xl { font-size: 20px; line-height: 28px; }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 12px;
+.font-bold { font-weight: 700; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
 
-  .card-title {
-    font-size: 14px;
-    color: #6b7280;
-  }
+.text-gray-900 { color: #0f172a; }
+.text-gray-800 { color: #1e293b; }
+.text-gray-700 { color: #334155; }
+.text-gray-600 { color: #475569; }
+.text-gray-500 { color: #64748b; }
+.text-gray-400 { color: #94a3b8; }
 
-  .card-value {
-    font-size: 22px;
-    font-weight: bold;
-    color: #1f2937;
-    margin-top: 4px;
-  }
+.border-t-4 { border-top-width: 4px; border-top-style: solid; }
+.border-l-2 { border-left-width: 2px; border-left-style: solid; }
+.border-b { border-bottom-width: 1px; border-bottom-style: solid; }
+
+.border-emerald-500 { border-color: #10b981; }
+.border-red-500 { border-color: #ef4444; }
+.border-slate-700 { border-color: #334155; }
+.border-amber-400 { border-color: #fbbf24; }
+
+.bg-emerald-500 { background-color: #10b981; }
+.bg-emerald-100 { background-color: #d1fae5; }
+.text-emerald-600 { color: #059669; }
+
+.bg-red-500 { background-color: #ef4444; }
+.bg-red-100 { background-color: #fee2e2; }
+.text-red-600 { color: #dc2626; }
+.text-red-500 { color: #ef4444; }
+
+.bg-slate-700 { background-color: #334155; }
+.bg-slate-100 { background-color: #f1f5f9; }
+
+.bg-amber-400 { background-color: #fbbf24; }
+.bg-amber-100 { background-color: #fef3c7; }
+.text-amber-500 { color: #f59e0b; }
+.text-amber-600 { color: #d97706; }
+
+.bg-gray-100 { background-color: #f1f5f9; }
+
+.w-full { width: 100%; }
+.h-1\.5 { height: 6px; }
+.w-7 { width: 28px; }
+.h-7 { height: 28px; }
+.w-52 { width: 208px; }
+
+.rounded-full { border-radius: 9999px; }
+.overflow-hidden { overflow: hidden; }
+.mt-1 { margin-top: 4px; }
+.mt-4 { margin-top: 16px; }
+.mb-3 { margin-bottom: 12px; }
+.mb-4 { margin-bottom: 16px; }
+.pb-2 { padding-bottom: 8px; }
+.pb-4 { padding-bottom: 16px; }
+.pl-2 { padding-left: 8px; }
+.pl-8 { padding-left: 32px; }
+
+.border { border: 1px solid #cbd5e1; }
+.rounded-md { border-radius: 6px; }
+.outline-none { outline: none; }
+.overflow-x-auto { overflow-x: auto; }
+
+.bg-blue-600 {
+  background-color: #2563eb;
+  color: #ffffff;
+  &:hover { background-color: #1d4ed8; }
 }
