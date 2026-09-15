@@ -468,3 +468,67 @@ h2 {
 .cards-list.cdk-drop-list-dragging .deal-card:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+
+
+/*  MOBILE & TABLET STYLES */
+
+@media (max-width: 768px) {
+  
+  /* 1. Header Navigation */
+  .header-nav, header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+
+    .nav-links {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+    }
+  }
+
+  /*Top Summary KPI Cards (Single Column) */
+  .dashboard-summary-grid, 
+  [class*="summary-grid"], 
+  [class*="cards-grid"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important; 
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  /* Filter Controls Panel */
+  .filter-panel, 
+  [class*="filter-bar"], 
+  [class*="filter-container"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+
+    input, select, button {
+      width: 100% !important; 
+      box-sizing: border-box !important;
+    }
+  }
+
+  /*Horizontal Scrollable Pipeline Board */
+  .pipeline-board, 
+  [class*="pipeline-container"], 
+  [class*="kanban-board"] {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important; 
+    overflow-y: hidden !important;
+    padding-bottom: 16px !important;
+    gap: 16px !important;
+    -webkit-overflow-scrolling: touch;
+
+    .pipeline-column, 
+    [class*="column"] {
+      flex: 0 0 280px !important;
+      min-width: 280px !important;
+      max-width: 280px !important;
+    }
+  }
+}
